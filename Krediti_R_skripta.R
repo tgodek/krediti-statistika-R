@@ -1,31 +1,31 @@
 ## Ucitavanje podataka
 
-Krediti <- read.table("D:/Documents/Stane/Faks/semestar - 8/SMI/seminar/Krediti/german.txt", quote="\"", comment.char="")
+Krediti <- read.table("putanja_do_german.txt", quote="\"", comment.char="")
 View(Krediti)
 
 ## Imenovanje stupaca
 
-colnames(Krediti)[1] <- "Status tekuÊeg raËuna"
+colnames(Krediti)[1] <- "Status teku√¶eg ra√®una"
 colnames(Krediti)[2] <- "Trajanje u mjesecima"
 colnames(Krediti)[3] <- "Kreditna povijest"
 colnames(Krediti)[4] <- "Svrha kredita"
 colnames(Krediti)[5] <- "Iznos kredita"
-colnames(Krediti)[6] <- "ätednja"
+colnames(Krediti)[6] <- "≈†tednja"
 colnames(Krediti)[7] <- "Trajanje zaposlenja"
 colnames(Krediti)[8] <- "Stopa otplate primanja"
-colnames(Krediti)[9] <- "BraËni status i Spol"
-colnames(Krediti)[10] <- "Duûnici/Jamci"
-colnames(Krediti)[11] <- "Trenutno prebivaliöte od"
+colnames(Krediti)[9] <- "Bra√®ni status i Spol"
+colnames(Krediti)[10] <- "Du≈ænici/Jamci"
+colnames(Krediti)[11] <- "Trenutno prebivali≈°te od"
 colnames(Krediti)[12] <- "Imovina"
 colnames(Krediti)[13] <- "Starost"
-colnames(Krediti)[14] <- "ObroËni planovi"
+colnames(Krediti)[14] <- "Obro√®ni planovi"
 colnames(Krediti)[15] <- "Stanovanje"
 colnames(Krediti)[16] <- "Broj kredita u banci"
 colnames(Krediti)[17] <- "Posao"
 colnames(Krediti)[18] <- "Broj jamaca"
 colnames(Krediti)[19] <- "Telefon"
 colnames(Krediti)[20] <- "Strani radnik"
-colnames(Krediti)[21] <- "Matrica troökova"
+colnames(Krediti)[21] <- "Matrica tro≈°kova"
 
 ## Pridruzivanje skupa podataka uz pomoc naredbe attach
 
@@ -34,26 +34,26 @@ attach(Krediti)
 
 ## Pretvaranje varijable u faktor
 
-`Status tekuÊeg raËuna` <- as.factor(`Status tekuÊeg raËuna`)
+`Status teku√¶eg ra√®una` <- as.factor(`Status teku√¶eg ra√®una`)
 `Kreditna povijest` <- as.factor(`Kreditna povijest`)
 `Svrha kredita` <- as.factor(`Svrha kredita`)
-ätednja <- as.factor(ätednja)
+≈†tednja <- as.factor(≈†tednja)
 `Trajanje zaposlenja` <- as.factor(`Trajanje zaposlenja`)
-`BraËni status i Spol` <-as.factor(`BraËni status i Spol`)
-`Duûnici/Jamci` <- as.factor(`Duûnici/Jamci`)
+`Bra√®ni status i Spol` <-as.factor(`Bra√®ni status i Spol`)
+`Du≈ænici/Jamci` <- as.factor(`Du≈ænici/Jamci`)
 Imovina <- as.factor(Imovina)
-`ObroËni planovi` <- as.factor(`ObroËni planovi`)
+`Obro√®ni planovi` <- as.factor(`Obro√®ni planovi`)
 Stanovanje <- as.factor(Stanovanje)
 Posao <- as.factor(Posao)
 Telefon <- as.factor(Telefon)
 `Strani radnik` <- as.factor(`Strani radnik`)
-`Matrica troökova` <- as.factor(`Matrica troökova`)
+`Matrica tro≈°kova` <- as.factor(`Matrica tro≈°kova`)
 
 
 ## Zadatak a)
 
-graf1 <- table(`Status tekuÊeg raËuna`)
-barplot(graf1, col="coral2", main = "Status tekuÊeg raËuna", ylab = "Frekvencija", xlab = "Status tekuÊeg raËuna")
+graf1 <- table(`Status teku√¶eg ra√®una`)
+barplot(graf1, col="coral2", main = "Status teku√¶eg ra√®una", ylab = "Frekvencija", xlab = "Status teku√¶eg ra√®una")
 
 graf2 <- hist(`Trajanje u mjesecima`, col = "cornflowerblue", main = "Histogram\nTrajanje u mjesecima", ylab = "Frekvencija")
 
@@ -65,29 +65,29 @@ barplot(graf4, col= "orange", main = "Svrha kredita", ylab = "Frekvencija", xlab
 
 graf5 <- hist(`Iznos kredita`, col = "brown", main = "Histogram\nIznos kredita", ylab = "Frekvencija")
 
-graf6 <- table(ätednja)
-barplot(graf6, col = "#3F612D", main = "ätednja", ylab = "Frekvencija", xlab = "ätednja")
+graf6 <- table(≈†tednja)
+barplot(graf6, col = "#3F612D", main = "≈†tednja", ylab = "Frekvencija", xlab = "≈†tednja")
 
 graf7 <- table(`Trajanje zaposlenja`)
 barplot(graf7, col = "#7952B3", main = "Trajanje zaposlenja", ylab = "Frekvencija", xlab = "Trajanje zaposlenja")
 
-graf8 = boxplot(`Stopa otplate primanja`, main = "Boxplot\nStopa rata u % raspoloûivog dohotka")
+graf8 = boxplot(`Stopa otplate primanja`, main = "Boxplot\nStopa rata u % raspolo≈æivog dohotka")
 
-graf9 = table(`BraËni status i Spol`)
-pie(graf9, main = "BraËni status i Spol")
+graf9 = table(`Bra√®ni status i Spol`)
+pie(graf9, main = "Bra√®ni status i Spol")
 
-graf10 = table(`Duûnici/Jamci`)
-pie(graf10, main = "Duûnici / Jamci")
+graf10 = table(`Du≈ænici/Jamci`)
+pie(graf10, main = "Du≈ænici / Jamci")
 
-graf11 <- boxplot(`Trenutno prebivaliöte od`, main = "Boxplot\nTrenutno prebivaliöte od")
+graf11 <- boxplot(`Trenutno prebivali≈°te od`, main = "Boxplot\nTrenutno prebivali≈°te od")
 
 graf12 <- table(Imovina)
 barplot(graf12, horiz = "TRUE", main = "Imovina", ylab = "Frekvencija", xlab = "Imovina", col = "#01937C")
 
 graf13 <- hist(Starost, col = "#F54748", main = "Histogram\nStarost", ylab = "Frekvencija")
 
-graf14 <- table(`ObroËni planovi`)
-barplot(graf14, col = "#1EAE98", main = "ObroËni planovi", ylab = "Frekvencija", xlab = "ObroËni planovi")
+graf14 <- table(`Obro√®ni planovi`)
+barplot(graf14, col = "#1EAE98", main = "Obro√®ni planovi", ylab = "Frekvencija", xlab = "Obro√®ni planovi")
 
 graf15 <- table(Stanovanje)
 barplot(graf15, col = "#C67ACE", horiz = "TRUE", main = "Stanovanje", ylab = "Frekvencija", xlab = "Stanovanje")
@@ -105,8 +105,8 @@ barplot(graf19, col = "#301B3F", horiz = TRUE, main = "Telefon", ylab = "Frekven
 graf20 <- table(`Strani radnik`)
 pie(graf20, main = "Strani radnik")
 
-graf21 <- table(`Matrica troökova`)
-barplot(graf21, col = "#00AF91", main = "Matrica troökova", ylab = "Frekvencija", xlab = "Matrica troökova")
+graf21 <- table(`Matrica tro≈°kova`)
+barplot(graf21, col = "#00AF91", main = "Matrica tro≈°kova", ylab = "Frekvencija", xlab = "Matrica tro≈°kova")
 
 ##Zadatak b)
 
@@ -137,8 +137,8 @@ plot(numericke$`Trajanje u mjesecima`, numericke$`Stopa otplate primanja`, xlab 
 test2
 report(test2)
 
-test3 <- cor.test(numericke$`Trajanje u mjesecima`, numericke$`Trenutno prebivaliöte od`)
-plot(numericke$`Trajanje u mjesecima`, numericke$`Trenutno prebivaliöte od`, xlab = "Trajanje u mjesecima", ylab = "Trajanje trenutnog prebivaliöta")
+test3 <- cor.test(numericke$`Trajanje u mjesecima`, numericke$`Trenutno prebivali≈°te od`)
+plot(numericke$`Trajanje u mjesecima`, numericke$`Trenutno prebivali≈°te od`, xlab = "Trajanje u mjesecima", ylab = "Trajanje trenutnog prebivali≈°ta")
 test3
 report(test3)
 
@@ -162,13 +162,13 @@ plot(numericke$`Iznos kredita`, numericke$`Stopa otplate primanja`, xlab = "Izno
 test7
 report(test7)
 
-test8 <- cor.test(numericke$`Iznos kredita`, numericke$`Trenutno prebivaliöte od`)
-plot(numericke$`Iznos kredita`, numericke$`Trenutno prebivaliöte od`, xlab = "Iznos kredita", ylab = "Trajanje trenutnog prebivaliöta")
+test8 <- cor.test(numericke$`Iznos kredita`, numericke$`Trenutno prebivali≈°te od`)
+plot(numericke$`Iznos kredita`, numericke$`Trenutno prebivali≈°te od`, xlab = "Iznos kredita", ylab = "Trajanje trenutnog prebivali≈°ta")
 test8
 report(test8)
 
 test9 <- cor.test(numericke$`Iznos kredita`, numericke$Starost)
-plot(numericke$`Iznos kredita`, numericke$Starost, xlab = "Iznos kredita", ylab = "Starost duûnosnika")
+plot(numericke$`Iznos kredita`, numericke$Starost, xlab = "Iznos kredita", ylab = "Starost du≈ænosnika")
 test9
 report(test9)
 
@@ -182,13 +182,13 @@ plot(numericke$`Iznos kredita`, numericke$`Broj jamaca`, xlab = "Iznos kredita",
 test11
 report(test11)
 
-test12 <- cor.test(numericke$`Stopa otplate primanja`, numericke$`Trenutno prebivaliöte od`)
-plot(numericke$`Stopa otplate primanja`, numericke$`Trenutno prebivaliöte od`, xlab = "Stopa otplate prema primanjima", ylab = "Trajanje trenutnog prebivaliöta")
+test12 <- cor.test(numericke$`Stopa otplate primanja`, numericke$`Trenutno prebivali≈°te od`)
+plot(numericke$`Stopa otplate primanja`, numericke$`Trenutno prebivali≈°te od`, xlab = "Stopa otplate prema primanjima", ylab = "Trajanje trenutnog prebivali≈°ta")
 test12
 report(test12)
 
 test13 <- cor.test(numericke$`Stopa otplate primanja`, numericke$Starost)
-plot(numericke$`Stopa otplate primanja`, numericke$Starost, xlab = "Stopa otplate prema primanjima", ylab = "Starost duûnosnika")
+plot(numericke$`Stopa otplate primanja`, numericke$Starost, xlab = "Stopa otplate prema primanjima", ylab = "Starost du≈ænosnika")
 test13
 report(test13)
 
@@ -203,27 +203,27 @@ test15
 report(test15)
 
 test16 <- cor.test(numericke$`Trajanje u mjesecima`, numericke$Starost)
-plot(numericke$`Trajanje u mjesecima`, numericke$Starost, xlab = "Trajanje trenutnog prebivaliöta", ylab = "Starost duûnosnika")
+plot(numericke$`Trajanje u mjesecima`, numericke$Starost, xlab = "Trajanje trenutnog prebivali≈°ta", ylab = "Starost du≈ænosnika")
 test16
 report(test16)
 
 test17 <- cor.test(numericke$`Trajanje u mjesecima`, numericke$`Broj kredita u banci`)
-plot(numericke$`Trajanje u mjesecima`, numericke$`Broj kredita u banci`, xlab = "Trajanje trenutnog prebivaliöta", ylab = "Broj kredita u banci")
+plot(numericke$`Trajanje u mjesecima`, numericke$`Broj kredita u banci`, xlab = "Trajanje trenutnog prebivali≈°ta", ylab = "Broj kredita u banci")
 test17
 report(test17)
 
 test18 <- cor.test(numericke$`Trajanje u mjesecima`, numericke$`Broj jamaca`)
-plot(numericke$`Trajanje u mjesecima`, numericke$`Broj jamaca`, xlab = "Trajanje trenutnog prebivaliöta", ylab = "Broj jamaca")
+plot(numericke$`Trajanje u mjesecima`, numericke$`Broj jamaca`, xlab = "Trajanje trenutnog prebivali≈°ta", ylab = "Broj jamaca")
 test18
 report(test18)
 
 test19 <- cor.test(numericke$Starost, numericke$`Broj kredita u banci`)
-plot(numericke$Starost, numericke$`Broj kredita u banci`, xlab = "Starost duûnosnika", ylab = "Broj kredita u banci")
+plot(numericke$Starost, numericke$`Broj kredita u banci`, xlab = "Starost du≈ænosnika", ylab = "Broj kredita u banci")
 test19
 report(test19)
 
 test20 <- cor.test(numericke$Starost, numericke$`Broj jamaca`)
-plot(numericke$Starost, numericke$`Broj jamaca`, xlab = "Starost duûnosnika", ylab = "Broj jamaca")
+plot(numericke$Starost, numericke$`Broj jamaca`, xlab = "Starost du≈ænosnika", ylab = "Broj jamaca")
 test20
 report(test20)
 
@@ -242,31 +242,31 @@ report(test21)
 ## library("ggpubr")
 
 shapiro.test(numericke$`Trajanje u mjesecima`)
-ggdensity(numericke$`Trajanje u mjesecima`,ylab = "GustoÊa", xlab = "Trajanje u mjesecima", main = "GustoÊa za\nTrajanje u mjesecima")
+ggdensity(numericke$`Trajanje u mjesecima`,ylab = "Gusto√¶a", xlab = "Trajanje u mjesecima", main = "Gusto√¶a za\nTrajanje u mjesecima")
 ggqqplot(numericke$`Trajanje u mjesecima`, main = "Quantile-Quantile Plot")
 
 shapiro.test(numericke$`Iznos kredita`)
-ggdensity(numericke$`Iznos kredita`, ylab = "GustoÊa", xlab = "Iznos kredita", main = "GustoÊa za\nIznos kredita")
+ggdensity(numericke$`Iznos kredita`, ylab = "Gusto√¶a", xlab = "Iznos kredita", main = "Gusto√¶a za\nIznos kredita")
 ggqqplot(numericke$`Iznos kredita`, main = "Quantile-Quantile Plot")
 
 shapiro.test(numericke$`Stopa otplate primanja`)
-ggdensity(numericke$`Stopa otplate primanja`, ylab = "GustoÊa", xlab = "Stopa rata u % raspoloûivog dohotka", main = "GustoÊa za\nStopu rata u % raspoloûivog dohotka")
+ggdensity(numericke$`Stopa otplate primanja`, ylab = "Gusto√¶a", xlab = "Stopa rata u % raspolo≈æivog dohotka", main = "Gusto√¶a za\nStopu rata u % raspolo≈æivog dohotka")
 ggqqplot(numericke$`Stopa otplate primanja`, main = "Quantile-Quantile Plot")
 
-shapiro.test(numericke$`Trenutno prebivaliöte od`)
-ggdensity(numericke$`Trenutno prebivaliöte od`, ylab = "GustoÊa", xlab = "Trenutno prebivaliöte od", main = "GustoÊa za\nTrenutno prebivaliöte od")
-ggqqplot(numericke$`Trenutno prebivaliöte od`, main = "Quantile-Quantile Plot")
+shapiro.test(numericke$`Trenutno prebivali≈°te od`)
+ggdensity(numericke$`Trenutno prebivali≈°te od`, ylab = "Gusto√¶a", xlab = "Trenutno prebivali≈°te od", main = "Gusto√¶a za\nTrenutno prebivali≈°te od")
+ggqqplot(numericke$`Trenutno prebivali≈°te od`, main = "Quantile-Quantile Plot")
 
 shapiro.test(numericke$Starost)
-ggdensity(numericke$Starost, ylab = "GustoÊa", xlab = "Starost", main = "GustoÊa za\nStarost")
+ggdensity(numericke$Starost, ylab = "Gusto√¶a", xlab = "Starost", main = "Gusto√¶a za\nStarost")
 ggqqplot(numericke$Starost, main = "Quantile-Quantile Plot")
 
 shapiro.test(numericke$`Broj kredita u banci`)
-ggdensity(numericke$`Broj kredita u banci`, ylab = "GustoÊa", xlab = "Broj kredita u banci", main = "GustoÊa za\nBroj kredita u banci")
+ggdensity(numericke$`Broj kredita u banci`, ylab = "Gusto√¶a", xlab = "Broj kredita u banci", main = "Gusto√¶a za\nBroj kredita u banci")
 ggqqplot(numericke$`Broj kredita u banci`, main = "Quantile-Quantile Plot")
 
 shapiro.test(numericke$`Broj jamaca`)
-ggdensity(numericke$`Broj jamaca`, ylab = "GustoÊa", xlab = "Broj jamaca", main = "GustoÊa za\nBroj Jamaca")
+ggdensity(numericke$`Broj jamaca`, ylab = "Gusto√¶a", xlab = "Broj jamaca", main = "Gusto√¶a za\nBroj Jamaca")
 ggqqplot(numericke$`Broj jamaca`, main = "Quantile-Quantile Plot")
 
 
@@ -334,12 +334,12 @@ shapiro.test(PosaoA173$`Iznos kredita`)
 shapiro.test(PosaoA174$`Iznos kredita`)
 
 
-##  IzraËun varijance varijable "Trajanje u mjesecima" po modalitetima varijable "Svrha kredita" i "Posao"
+##  Izra√®un varijance varijable "Trajanje u mjesecima" po modalitetima varijable "Svrha kredita" i "Posao"
 
 tapply(Krediti$`Trajanje u mjesecima`, Krediti$`Svrha kredita`, var)
 tapply(Krediti$`Trajanje u mjesecima`, Krediti$Posao, var)
 
-##  IzraËun varijance varijable "Iznos kredita" po modalitetima varijable "Svrha kredita" i "Posao"
+##  Izra√®un varijance varijable "Iznos kredita" po modalitetima varijable "Svrha kredita" i "Posao"
 
 tapply(Krediti$`Iznos kredita`, Krediti$`Svrha kredita`, var)
 tapply(Krediti$`Iznos kredita`, Krediti$Posao, var)
@@ -388,13 +388,13 @@ shapiro.test(SvrhaKreditaA410$`Stopa otplate primanja`)
 
 bartlett.test(`Stopa otplate primanja` ~ `Svrha kredita`, data = Krediti)
 
-## Rjesenje Bartlettovog testa: PrihvaÊa se H0 hipoteza koja govori da su varijance ovih grupa meusobno jedanke 
+## Rjesenje Bartlettovog testa: Prihva√¶a se H0 hipoteza koja govori da su varijance ovih grupa me√∞usobno jedanke 
 
 tapply(Krediti$`Stopa otplate primanja`, Krediti$`Svrha kredita`, var)
 
 ## Provedba analize varijance
 
-boxplot(`Stopa otplate primanja` ~ `Svrha kredita`, data = Krediti, xlab = "Svrha kredita", ylab = "Stopa rata u % raspoloûivog dohotka")
+boxplot(`Stopa otplate primanja` ~ `Svrha kredita`, data = Krediti, xlab = "Svrha kredita", ylab = "Stopa rata u % raspolo≈æivog dohotka")
 
 
 SvrhaKredita <- as.factor(`Svrha kredita`)
@@ -402,10 +402,10 @@ SvrhaKredita <- as.factor(`Svrha kredita`)
 AnovaModel.1 <- aov(`Stopa otplate primanja` ~ SvrhaKredita, data = Krediti)
 summary(AnovaModel.1)
 
-## ZakljuËak: Provedbnom Anova testa dobili smo da je p = 0,0646, odnosno (p > 0,05) pa prema tome zakljuËujemo 
-## da ne postoje signifikantne razlike meu ovim grupama
+## Zaklju√®ak: Provedbnom Anova testa dobili smo da je p = 0,0646, odnosno (p > 0,05) pa prema tome zaklju√®ujemo 
+## da ne postoje signifikantne razlike me√∞u ovim grupama
 
-## ProsjeËne vrijednosti po klasama 
+## Prosje√®ne vrijednosti po klasama 
 tapply(Krediti$`Stopa otplate primanja`, Krediti$`Svrha kredita`, mean)
 
 ## Standardne devijacije po klasama 
@@ -419,7 +419,7 @@ confint(.Pairs)
 cld(.Pairs)
 plot(confint(.Pairs))
 
-## Ne postoji signifikantna razlika meu grupama
+## Ne postoji signifikantna razlika me√∞u grupama
 
 
 ## Zadatak f)
@@ -430,11 +430,11 @@ TrajanjeZaposlenjaA73 <- subset(Krediti, subset = `Trajanje zaposlenja`=="A73")
 TrajanjeZaposlenjaA74 <- subset(Krediti, subset = `Trajanje zaposlenja`=="A74")
 TrajanjeZaposlenjaA75 <- subset(Krediti, subset = `Trajanje zaposlenja`=="A75")
 
-BracniStatusISpol91 <- subset(Krediti, subset = `BraËni status i Spol` =="A91")
-BracniStatusISpol92 <- subset(Krediti, subset = `BraËni status i Spol` =="A92")
-BracniStatusISpol93 <- subset(Krediti, subset = `BraËni status i Spol` =="A93")
-BracniStatusISpol94 <- subset(Krediti, subset = `BraËni status i Spol` =="A94")
-BracniStatusISpol95 <- subset(Krediti, subset = `BraËni status i Spol` =="A95")
+BracniStatusISpol91 <- subset(Krediti, subset = `Bra√®ni status i Spol` =="A91")
+BracniStatusISpol92 <- subset(Krediti, subset = `Bra√®ni status i Spol` =="A92")
+BracniStatusISpol93 <- subset(Krediti, subset = `Bra√®ni status i Spol` =="A93")
+BracniStatusISpol94 <- subset(Krediti, subset = `Bra√®ni status i Spol` =="A94")
+BracniStatusISpol95 <- subset(Krediti, subset = `Bra√®ni status i Spol` =="A95")
 
 TB1 <- 01 ## A71 A91
 TB2 <- 02 ## A71 A92
@@ -522,32 +522,32 @@ shapiro.test(BracniStatusISpol93$`Iznos kredita`)
 shapiro.test(BracniStatusISpol94$`Iznos kredita`)
 shapiro.test(BracniStatusISpol95$`Iznos kredita`)
 
-##  IzraËun varijance varijable "Trajanje u mjesecima" po modalitetima varijable "Svrha kredita" i "Posao"
+##  Izra√®un varijance varijable "Trajanje u mjesecima" po modalitetima varijable "Svrha kredita" i "Posao"
 
 tapply(Krediti$`Trajanje u mjesecima`, Krediti$`Trajanje zaposlenja`, var)
-tapply(Krediti$`Trajanje u mjesecima`, Krediti$`BraËni status i Spol`, var)
+tapply(Krediti$`Trajanje u mjesecima`, Krediti$`Bra√®ni status i Spol`, var)
 
-##  IzraËun varijance varijable "Iznos kredita" po modalitetima varijable "Svrha kredita" i "Posao"
+##  Izra√®un varijance varijable "Iznos kredita" po modalitetima varijable "Svrha kredita" i "Posao"
 
 tapply(Krediti$`Iznos kredita`, Krediti$`Trajanje zaposlenja`, var)
-tapply(Krediti$`Iznos kredita`, Krediti$`BraËni status i Spol`, var)
+tapply(Krediti$`Iznos kredita`, Krediti$`Bra√®ni status i Spol`, var)
 
 ## Bartlett-ov test
 
 bartlett.test(`Trajanje u mjesecima` ~ `Trajanje zaposlenja`, data = Krediti)
-bartlett.test(`Trajanje u mjesecima` ~ `BraËni status i Spol`, data = Krediti)
+bartlett.test(`Trajanje u mjesecima` ~ `Bra√®ni status i Spol`, data = Krediti)
 
 bartlett.test(`Iznos kredita` ~ `Trajanje zaposlenja`, data = Krediti)
-bartlett.test(`Iznos kredita` ~ `BraËni status i Spol`, data = Krediti)
+bartlett.test(`Iznos kredita` ~ `Bra√®ni status i Spol`, data = Krediti)
 
 ## Levenov test
 
 library(car)
 leveneTest(Krediti$`Trajanje u mjesecima`, Krediti$`Trajanje zaposlenja`, center = mean)
-leveneTest(Krediti$`Trajanje u mjesecima`, Krediti$`BraËni status i Spol`, center = mean)
+leveneTest(Krediti$`Trajanje u mjesecima`, Krediti$`Bra√®ni status i Spol`, center = mean)
 
 leveneTest(Krediti$`Iznos kredita`, Krediti$`Trajanje zaposlenja`, center = mean)
-leveneTest(Krediti$`Iznos kredita`, Krediti$`BraËni status i Spol`, center = mean)
+leveneTest(Krediti$`Iznos kredita`, Krediti$`Bra√®ni status i Spol`, center = mean)
 
 ## ANOVA
 install.packages("multcomp")
@@ -556,33 +556,33 @@ library(multcomp)
 install.packages("RcmdrMisc")
 library(RcmdrMisc)
 
-AnovaModel1 <- (lm(`Trajanje u mjesecima` ~ `Trajanje zaposlenja`*`BraËni status i Spol`, data = Krediti))
+AnovaModel1 <- (lm(`Trajanje u mjesecima` ~ `Trajanje zaposlenja`*`Bra√®ni status i Spol`, data = Krediti))
 Anova(AnovaModel1)
 
 tapply(Krediti$`Trajanje u mjesecima`, Krediti$`Trajanje zaposlenja`, mean)
 tapply(Krediti$`Trajanje u mjesecima`, Krediti$`Trajanje zaposlenja`, sd)
 tapply(Krediti$`Trajanje u mjesecima`, Krediti$`Trajanje zaposlenja`, function(x) sum(!is.na(x)))
 
-tapply(Krediti$`Trajanje u mjesecima`, Krediti$`BraËni status i Spol`, mean)
-tapply(Krediti$`Trajanje u mjesecima`, Krediti$`BraËni status i Spol`, sd)
-tapply(Krediti$`Trajanje u mjesecima`, Krediti$`BraËni status i Spol`, function(x) sum(!is.na(x)))
+tapply(Krediti$`Trajanje u mjesecima`, Krediti$`Bra√®ni status i Spol`, mean)
+tapply(Krediti$`Trajanje u mjesecima`, Krediti$`Bra√®ni status i Spol`, sd)
+tapply(Krediti$`Trajanje u mjesecima`, Krediti$`Bra√®ni status i Spol`, function(x) sum(!is.na(x)))
 
 plotMeans(Krediti$`Trajanje u mjesecima`, Krediti$`Trajanje zaposlenja`, error.bars = "conf.int")
-plotMeans(Krediti$`Trajanje u mjesecima`, Krediti$`BraËni status i Spol`, error.bars = "conf.int")
+plotMeans(Krediti$`Trajanje u mjesecima`, Krediti$`Bra√®ni status i Spol`, error.bars = "conf.int")
 
-AnovaModel2 <- (lm(`Iznos kredita` ~ `Trajanje zaposlenja`*`BraËni status i Spol`, data = Krediti))
+AnovaModel2 <- (lm(`Iznos kredita` ~ `Trajanje zaposlenja`*`Bra√®ni status i Spol`, data = Krediti))
 Anova(AnovaModel2)
 
 tapply(Krediti$`Iznos kredita`, Krediti$`Trajanje zaposlenja`, mean)
 tapply(Krediti$`Iznos kredita`, Krediti$`Trajanje zaposlenja`, sd)
 tapply(Krediti$`Iznos kredita`, Krediti$`Trajanje zaposlenja`, function(x) sum(!is.na(x)))
 
-tapply(Krediti$`Iznos kredita`, Krediti$`BraËni status i Spol`, mean)
-tapply(Krediti$`Iznos kredita`, Krediti$`BraËni status i Spol`, sd)
-tapply(Krediti$`Iznos kredita`, Krediti$`BraËni status i Spol`, function(x) sum(!is.na(x)))
+tapply(Krediti$`Iznos kredita`, Krediti$`Bra√®ni status i Spol`, mean)
+tapply(Krediti$`Iznos kredita`, Krediti$`Bra√®ni status i Spol`, sd)
+tapply(Krediti$`Iznos kredita`, Krediti$`Bra√®ni status i Spol`, function(x) sum(!is.na(x)))
 
 plotMeans(Krediti$`Iznos kredita`, Krediti$`Trajanje zaposlenja`, error.bars = "conf.int")
-plotMeans(Krediti$`Iznos kredita`, Krediti$`BraËni status i Spol`, error.bars = "conf.int")
+plotMeans(Krediti$`Iznos kredita`, Krediti$`Bra√®ni status i Spol`, error.bars = "conf.int")
 
 ## post hoc test
 ## Pretvaranje u jednofaktorsku ANOVU
@@ -624,12 +624,12 @@ barplot(Tab, beside = T, legend = T)
 CTest <- chisq.test(Tab, correct = TRUE)
 CTest
 
-## Odbacujemo H0 hipotezu i prihvaÊamo H1 hipotezu koja govori da su "Svrha kredita"" i "BraËni status i Spol" meusobno ovisni.
+## Odbacujemo H0 hipotezu i prihva√¶amo H1 hipotezu koja govori da su "Svrha kredita"" i "Bra√®ni status i Spol" me√∞usobno ovisni.
 
 
 ## Zadatak h)
 
-Tab2 <- table(`Svrha kredita`, `BraËni status i Spol`)
+Tab2 <- table(`Svrha kredita`, `Bra√®ni status i Spol`)
 Tab2
 barplot(Tab2, beside = T, legend = T)
 
@@ -637,8 +637,8 @@ barplot(Tab2, beside = T, legend = T)
 CTest2 <- chisq.test(Tab2, correct = TRUE)
 CTest2
 
-## Kod signifikantnosti od 1% ostajemo kod H0 hipoteze koja govori da "Svrha kredita"" i "BraËni status i Spol" nisu meusobno ovisni.
-## Kod signifikantnosti od 5% odbacujemo H0 hipotezu i prihvaÊamo H1 hipotezu koja govori da su "Svrha kredita"" i "BraËni status i Spol" meusobno ovisni.
+## Kod signifikantnosti od 1% ostajemo kod H0 hipoteze koja govori da "Svrha kredita"" i "Bra√®ni status i Spol" nisu me√∞usobno ovisni.
+## Kod signifikantnosti od 5% odbacujemo H0 hipotezu i prihva√¶amo H1 hipotezu koja govori da su "Svrha kredita"" i "Bra√®ni status i Spol" me√∞usobno ovisni.
 
 
 ## Zadatak i)
